@@ -1,0 +1,115 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MHH</title>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Codystar|Monoton|Schoolbell|VT323" rel="stylesheet">
+  <link rel="stylesheet" href="css/master.css">
+</head>
+<body ng-app="MyWeb" ng-controller="myCtrl" ng-cloak>
+
+    <div layout="column" flex>
+        <div layout="column" layout-align="start center" flex>
+            <p class="myname">
+                muhammad<br>
+                hafiz hasan<br>
+
+                <a href="https://www.facebook.com/muhammadhafiz" target="_blank"><i class="fa fa-facebook-square mylink"></i></a>
+                <a href="https://github.com/mhafizhasan" target="_blank"><i class="fa fa-github mylink"></i></a>
+                <a href="https://bitbucket.org/mhafizhasan" target="_blank"><i class="fa fa-bitbucket mylink"></i></a>
+                <a href="https://gitlab.com/mhafizhasan" target="_blank"><i class="fa fa-gitlab mylink"></i></a>
+                <a href="https://www.linkedin.com/in/mhafizhasan" target="_blank"><i class="fa fa-linkedin-square mylink"></i></a>
+            </p>
+            <div layout="row">
+                <a href="#" ng-click="showContact();">contact</a>
+                <i class="fa fa-eye-slash" style="padding-left:15px;padding-right:15px;"></i>
+                <a href="#" ng-click="showPortfolio();">portfolio</a>
+            </div>
+            <div layout="row" class="txt-small" ng-show="contact">
+                <p>hello at mhafizhasan.com</p>
+            </div>
+            <div layout="row" class="txt-small" ng-show="portfolio" style="text-align:center;padding-top:30px;padding-bottom:30px;padding-left:auto;padding-right:auto;" layout-align="center center" layout-wrap>
+                <div layout="column" class="port-card" md-whiteframe="5" ng-repeat="work in works">
+                    <p>{{ work.name }}</p>
+                    <img src="portfolio/{{ work.image }}" alt="" style="height:200px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+  <script src="https://use.fontawesome.com/87b19e4b9e.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">
+    angular.module('MyWeb', [
+        'ngMaterial',
+        'ngMessages'
+    ])
+    .controller('myCtrl', function($scope) {
+
+        $scope.contact = false;
+        $scope.portfolio = false;
+
+        $scope.showContact = function() {
+            $scope.contact = true;
+            $scope.portfolio = false;
+        }
+
+        $scope.showPortfolio = function() {
+            $scope.contact = false;
+            $scope.portfolio = true;
+        }
+
+        // portfolio
+        $scope.works = [
+            {
+                name: 'ASKGOV',
+                image: 'askgov.png'
+            },
+            {
+                name: 'Whatsapp Insight',
+                image: 'insight.png'
+            },
+            {
+                name: 'Goodscycle',
+                image: 'gc-client.png'
+            },
+            {
+                name: 'Goodscycle Admin',
+                image: 'gc-admin.png'
+            },
+            {
+                name: 'Suri',
+                image: 'suri.png'
+            },
+            {
+                name: 'Worker404',
+                image: 'worker404.png'
+            },
+            {
+                name: 'Worker404 Backend',
+                image: 'worker404-backend.png'
+            },
+            {
+                name: 'RIASEC Analysis',
+                image: 'want2be.png'
+            }
+        ];
+
+    });
+  </script>
+
+</body>
+</html>

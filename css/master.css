@@ -1,0 +1,43 @@
+html, body {
+    text-align: center;
+    font-family: 'Codystar', cursive;
+    background-color: #eee !important;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    cursor: auto;
+}
+
+.main-content {
+    padding-top: 200px;
+}
+
+.myname {
+    padding-top: 150px;
+    line-height: 35px;
+    font-size: 40px;
+    font-family: 'Monoton', cursive;
+}
+
+.mylink {
+    padding: 0px 10px 0px 10px;
+    font-size: 27px !important;
+}
+
+a {
+    color: #000;
+}
+
+.txt-small {
+    font-family: 'VT323', monospace;;
+    /*font-size: 50%;*/
+}
+
+.port-card {
+    overflow: auto;
+    margin: 5px;
+    padding: 10px;
+    background-color: #fff;
+    white-space: normal;
+}
